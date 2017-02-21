@@ -1,0 +1,10 @@
+img {
+    border: 0 !important;
+    box-shadow: 0 0 0 0 !important;
+}
+
+code {
+    background: lightgray;
+    border: solid black 1px;
+    color: darkred;
+}
