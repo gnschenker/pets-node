@@ -1,6 +1,6 @@
 ## Create a Swarm
 
-* We're using [play with Docker](www.play-with-docker.com)
+* We're using [Play with Docker](www.play-with-docker.com)
 * Start a session and create 5 nodes
 * On first node run:<br> `docker swarm init ...` 
 * Other nodes:<br> `docker swarm join ...`
