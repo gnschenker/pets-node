@@ -1,4 +1,4 @@
-## What is a Swarm?
+## Into the Swarm
 ![Swarm](sections/images/swarm.png)
 Note:
 Feature highlights

@@ -21,11 +21,44 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+		<style>
+			table td {
+				border-bottom: 0px none !important;
+			}
+			
+			.icon {
+				margin: 0px !important;
+				width: 64px;
+				vertical-align: middle !important;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
 				<section data-markdown="sections/start.md" data-separator="^\n\n\n"  data-separator-vertical="^\n\n" data-separator-notes="^Note:" data-charset="iso-8859-15">
+				</section>
+				<section>
+					<h2>About me</h2>
+					<table>
+						<tr>
+							<td style="width: 20%; vertical-align: top"><img src="sections/images/portrait.jpg" title="Gabriel Schenker"></td>
+							<td>
+								<ul style="font-size: 18pt">
+									<li>Principal Curriculum Developer, Docker Inc.</li>
+									<li>Docker Captain</li>
+									<li>Former Distinguished Software Architect</li>
+									<li>Former Chief Software Architect</li>
+									<li>Blogger, Author</li>
+								</ul>
+							</td>
+						</tr>
+					</table>
+					<table style="font-size: 18pt; margin: 0;">
+						<tr><td><img src="sections/images/twitter.jpeg" class="icon"></td><td class="icon">@gnschenker</td></tr>
+						<tr><td><img src="sections/images/linkedin.PNG" class="icon"></td><td class="icon">http://www.linkedin.com/in/gabrielschenker</td></tr>
+						<tr><td><img src="sections/images/lostechies.PNG" class="icon"></td><td class="icon">www.lostechies.com/gabrielschenker</td></tr>
+					</table>
 				</section>
 				<section data-markdown="sections/agenda.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:" data-charset="iso-8859-15">
 				</section>
@@ -51,6 +84,18 @@
 					<section data-markdown="sections/swarm-update-app.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:" data-charset="iso-8859-15">
 					</section>
 					<section data-markdown="sections/swarm-portainer.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:" data-charset="iso-8859-15">
+					</section>
+				</section>
+				<section>
+					<section data-markdown="sections/secrets.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:" data-charset="iso-8859-15">
+					</section>
+				</section>
+				<section>
+					<section data-markdown="sections/development.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:" data-charset="iso-8859-15">
+					</section>
+					<section data-markdown="sections/dev-edit-and-continue.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:" data-charset="iso-8859-15">
+					</section>
+					<section data-markdown="sections/dev-debugging.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:" data-charset="iso-8859-15">
 					</section>
 				</section>
 			</div>

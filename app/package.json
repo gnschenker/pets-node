@@ -4,6 +4,7 @@
   "description": "Demo app for Node JS Meetup",
   "main": "server.js",
   "scripts": {
+    "start-dev": "nodemon ./server.js 0.0.0.0 3000",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Gabriel Schenker",

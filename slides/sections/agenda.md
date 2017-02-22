@@ -1,7 +1,9 @@
 ## Agenda
 * Containers revisisted
-* What is a Swarm?
-* Containerizing the app
-* Deploying the app
-* Scaling the app
+* Into the Swarm
+    * Containerizing the app
+    * Deploying the app
+    * Scaling the app
+    * Updating the app
 * Secrets
+* Reducing Friction in Development

@@ -8,3 +8,7 @@ code {
     border: solid black 1px;
     color: darkred;
 }
+
+.reveal .slides {
+    text-align: left;
+}
