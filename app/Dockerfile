@@ -1,14 +1,5 @@
 FROM node:latest
-
-RUN mkdir -p /app
-WORKDIR /app
-
-# for development only
-RUN npm install -g nodemon
-
-COPY package.json /app/
-RUN npm install
 COPY . /app
-EXPOSE 3000
-
-CMD npm start  
+WORKDIR /app
+RUN npm install
+CMD npm start
