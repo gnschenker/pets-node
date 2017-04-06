@@ -69,7 +69,12 @@
 
 ## Creating and Working with a Swarm
 
-1. In PWD create a new swarm with 5 nodes (3 manager, 2 worker)
+1. In PWD create a new swarm with 5 nodes (3 manager, 2 worker) and run the visualizer on it:
+
+    ```
+    docker run -it -d -p 8080:8080 -v /var/run/docker.sock:/var/run/docker.sock manomarks/visualizer
+    ```
+    
 2. Explain HA, Raft, gossip network
 3. Run Pets application as service:
 
