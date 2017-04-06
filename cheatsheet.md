@@ -84,6 +84,26 @@
     docker service update --replicas=3 pets
     ```
 
+6. Change `index.html`, rebuild image, tag and push
+
+    ```
+    docker image build -t gnschenker/pets-node .
+    docker image tag gnschenker/pets-node gnschenker/pets-node:2.0
+    docker push gnschenker/pets-node:2.0
+    ```
+
+7. Back on swarm update service image:
+
+    ```
+    docker service update --update-parallelism=2 --update-delay=10s --image gnschenker/pets-node:2.0 pets
+    ```
+
+8. Watch the update
+
+    ```
+    docker service ps pets
+    ```
+
 ## Stacks
 
 1. Explain what a stack is and why we need it
@@ -103,7 +123,7 @@
 1. Create a secret:
 
     ```
-    echo "Passw0rd!" | docker sectet create db-password -
+    echo "Passw0rd!" | docker secret create db-password -
     ```
 
 2. Use secrets in services. Modify stack file:
