@@ -1,5 +1,28 @@
 # Cookbook
 
+## Preparation
+
+* Make sure you have `http-server` installed:
+
+    ```
+    npm install -g http-server
+    ```
+
+* Make sure you have this repo cloned:
+
+    ```
+    git clone https://github.com/gnschenker/pets-node.git
+    ```
+
+* Serve slides:
+
+    ```
+    cd pets-node/slides
+    http-server
+    ```
+
+ * Open browser and navigate to `localhost:8080`
+
 ## Introduction
 
 * Explain quickly what containers are and why they're cool
