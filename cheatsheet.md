@@ -95,7 +95,7 @@
 7. Back on swarm update service image:
 
     ```
-    docker service update --update-parallelism=2 --update-delay=10s --image gnschenker/pets-node:2.0 pets
+    docker service update --update-parallelism=1 --update-delay=10s --image gnschenker/pets-node:2.0 pets
     ```
 
 8. Watch the update
