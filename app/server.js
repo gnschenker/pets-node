@@ -4,6 +4,20 @@ var path    = require("path");
 var mustacheExpress = require('mustache-express');
 var os = require("os");
 
+var MongoClient = require('mongodb').MongoClient;
+var assert = require('assert');
+
+var url = 'mongodb://mongodb:27017/pets';
+MongoClient.connect(url, function(err, db) {
+  assert.equal(null, err);
+  console.log("Connected correctly to server.");
+  insertDocuments(db, function(){
+      db.close();
+  });
+});
+
+
+
 images = [
     "http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr05/15/9/anigif_enhanced-buzz-26388-1381844103-11.gif",
     "http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr01/15/9/anigif_enhanced-buzz-31540-1381844535-8.gif",
@@ -26,11 +40,45 @@ app.set('views', __dirname);
 app.get('/',function(req,res){
     var hostname = os.hostname();
     var index = Math.floor(Math.random() * 13);
-    res.render('index', {
-            url: images[index],
-            hostname: hostname
-        });
+    getPet(index, function(url){
+        res.render('index', {
+                url: url,
+                hostname: hostname
+            });
+    })
+
+    // res.render('index', {
+    //         url: images[index],
+    //         hostname: hostname
+    //     });
 });
+
+var insertDocuments = function(db, callback) {
+    var i = 0;
+    var pets = images.map(function(item){
+        return {
+            index: i++,
+            url: item
+        }
+    })
+   db.collection('pets').insertMany( pets, function(err, result) {
+    assert.equal(err, null);
+    console.log("Inserted a document into the restaurants collection.");
+    callback();
+  });
+};
+
+var getPet = function(index, callback) {
+    MongoClient.connect(url, function(err, db) {
+        assert.equal(null, err);
+        var collection = db.collection('pets');
+        collection.findOne({index: index}, function(err, doc) {
+            assert.equal(null, err);
+            callback(doc.url);
+            db.close();
+        });
+    });
+}
 
 app.listen(3000, '0.0.0.0');
 

@@ -10,7 +10,9 @@
   "author": "Gabriel Schenker",
   "license": "ISC",
   "dependencies": {
+    "assert": "^1.4.1",
     "express": "^4.14.1",
+    "mongodb": "^2.2.26",
     "mustache-express": "^1.2.4"
   }
 }
